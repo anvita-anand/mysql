@@ -1,0 +1,4 @@
+use prolevel;
+create table employee ( id int primary key AUTO_INCREMENT, Name varchar(20) not null, age int);
+insert into employee (name,age) values ("Anvita",21);
+insert into employee (name,age) values ("Panda",2); 
