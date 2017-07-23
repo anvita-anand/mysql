@@ -1,0 +1,100 @@
+MariaDB [(none)]> create database student;                                                                                                                         
+Query OK, 1 row affected (0.01 sec)                                                                                                                                
+                                                                                                                                                                   
+MariaDB [(none)]> create database production;                                                                                                                      
+Query OK, 1 row affected (0.00 sec)                                                                                                                                
+                                                                                                                                                                   
+MariaDB [(none)]> create database employee;                                                                                                                        
+Query OK, 1 row affected (0.00 sec)                                                                                                                                
+                                                                                                                                                                   
+MariaDB [(none)]> use student;                                                                                                                                     
+Database changed                                                                                                                                                   
+MariaDB [student]> select database();                                                                                                                              
++------------+                                                                                                                                                     
+| database() |                                                                                                                                                     
++------------+                                                                                                                                                     
+| student    |                                                                                                                                                     
++------------+                                                                                                                                                     
+1 row in set (0.00 sec)                                                                                                                                            
+                                                                                                                                                                   
+MariaDB [student]> create table t1                                                                                                                                 
+    -> ( name VARCHAR(10) NOT NULL,                                                                                                                                
+    -> age int                                                                                                                                                     
+    -> );           
+MariaDB [student]> show tables;                                                                                                                                    
++-------------------+                                                                                                                                              
+| Tables_in_student |                                                                                                                                              
++-------------------+                                                                                                                                              
+| t1                |                                                                                                                                              
+| t2                |                                                                                                                                              
++-------------------+                                                                                                                                              
+2 rows in set (0.00 sec)                                                                                                                                           
+                                                                                                                                                                   
+MariaDB [student]> drop table t2;                                                                                                                                  
+Query OK, 0 rows affected (0.03 sec)                                                                                                                               
+                                                                                                                                                                   
+MariaDB [student]> show tables;                                                                                                                                    
++-------------------+                                                                                                                                              
+| Tables_in_student |                                                                                                                                              
++-------------------+                                                                                                                                              
+| t1                |                                                                                                                                              
++-------------------+                                                                                                                                              
+1 row in set (0.00 sec)
+MariaDB [student]> show databases;                                                                                                                                 
++--------------------+                                                                                                                                             
+| Database           |                                                                                                                                             
++--------------------+                                                                                                                                             
+| CODINGGROUND       |                                                                                                                                             
+| employee           |                                                                                                                                             
+| first_db           |                                                                                                                                             
+| information_schema |                                                                                                                                             
+| mysql              |                                                                                                                                             
+| performance_schema |                                                                                                                                             
+| production         |                                                                                                                                             
+| student            |                                                                                                                                             
+| test               |                                                                                                                                             
++--------------------+                                                                                                                                             
+9 rows in set (0.00 sec)                                                                                                                                           
+                                                                                                                                                                   
+MariaDB [student]> use production;                                                                                                                                 
+Database changed                                                                                                                                                   
+MariaDB [production]> select database();                                                                                                                           
++------------+                                                                                                                                                     
+| database() |                                                                                                                                                     
++------------+                                                                                                                                                     
+| production |                                                                                                                                                     
++------------+                                                                                                                                                     
+1 row in set (0.00 sec)                                                                                                                                            
+                                                                                                                                                                   
+MariaDB [production]> create table p1                                                                                                                              
+    -> (product VARCHAR(10) NOT NULL,                                                                                                                              
+    -> qty int,                                                                                                                                                    
+    -> quality VARCHAR(4) NOT NULL                                                                                                                                 
+    -> );                                 
+MariaDB [production]> show tables;                                                                                                                                 
++----------------------+                                                                                                                                           
+| Tables_in_production |                                                                                                                                           
++----------------------+                                                                                                                                           
+| p1                   |                                                                                                                                           
++----------------------+                                                                                                                                           
+1 row in set (0.00 sec)                                                                                                                                            
+                                                                                                                                                                   
+MariaDB [production]> alter table p1 add price int unsigned;                                                                                                       
+Query OK, 0 rows affected (0.00 sec)                                                                                                                               
+Records: 0  Duplicates: 0  Warnings: 0                                                                                                                             
+                                                                                                                                                                   
+MariaDB [production]> select * from p1;                                                                                                                            
+Empty set (0.00 sec)                                                                                                                                               
+                                                                                                                                                                   
+MariaDB [production]> insert into p1 values ("motor",5,"good",30000);                                                                                              
+Query OK, 1 row affected (0.00 sec)                                                                                                                                
+                                                                                                                                                                   
+MariaDB [production]> select * from p1;                                                                                                                            
++---------+------+---------+-------+                                                                                                                               
+| product | qty  | quality | price |                                                                                                                               
++---------+------+---------+-------+                                                                                                                               
+| motor   |    5 | good    | 30000 |                                                                                                                               
++---------+------+---------+-------+                                                                                                                               
+1 row in set (0.00 sec)                                                                                                                                            
+                                                                                                                                                                                   
+                                                                                                                                                                            
