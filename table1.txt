@@ -1,0 +1,30 @@
+MariaDB [first_db]> SHOW TABLES();                                                                                           
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version fo
+ar '()' at line 1                                                                                                            
+MariaDB [first_db]> SHOW TABLES;                                                                                             
++--------------------+                                                                                                       
+| Tables_in_first_db |                                                                                                       
++--------------------+                                                                                                       
+| myfriends          |                                                                                                       
++--------------------+                                                                                                       
+1 row in set (0.00 sec)                                                                                                      
+                                                                                                                             
+MariaDB [first_db]> SELECT * FROM myfriends;                                                                                 
++--------+------+---------+                                                                                                  
+| name   | age  | city    |                                                                                                  
++--------+------+---------+                                                                                                  
+| Anvita |   20 | chennai |                                                                                                  
++--------+------+---------+                                                                                                  
+1 row in set (0.00 sec)                                                                                                      
+                                                                                                                             
+MariaDB [first_db]> INSERT INTO myfriends VALUES ("Abhishek",21,"Kolkata");                                                  
+Query OK, 1 row affected (0.00 sec)                                                                                          
+                                                                                                                             
+MariaDB [first_db]> SELECT * FROM myfriends;                                                                                 
++----------+------+---------+                                                                                                
+| name     | age  | city    |                                                                                                
++----------+------+---------+                                                                                                
+| Anvita   |   20 | chennai |                                                                                                
+| Abhishek |   21 | Kolkata |                                                                                                
++----------+------+---------+                                                                                                
+2 rows in set (0.00 sec)      
